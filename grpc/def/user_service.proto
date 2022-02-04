@@ -1,0 +1,19 @@
+
+syntax = "proto3";
+
+package user_grpc;
+option go_package = "user_service/grpc/def";
+
+service UserService{
+  rpc GetUserInfo(GetUserInfoRequest) returns (GetUserInfoResponse){}
+}
+
+message GetUserInfoRequest{
+  string UserID=1;
+}
+
+message GetUserInfoResponse{
+  string UserName=1;
+  string Location=2;
+}
+
